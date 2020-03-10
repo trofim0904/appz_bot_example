@@ -10,7 +10,7 @@ import org.telegram.telegrambots.meta.generics.BotSession;
 public abstract class Bot extends TelegramLongPollingBot {
     private final String token, botName;
 
-    private static BotSession botSession = null ;
+    private BotSession botSession = null ;
 
     protected Bot(String token, String botName){
         this.token = token;
@@ -22,10 +22,7 @@ public abstract class Bot extends TelegramLongPollingBot {
             botSession = new TelegramBotsApi().registerBot(newBot);
         } catch (TelegramApiException e) {
             newBot.processTheException(e);
-        } finally {
-            if(botSession!= null) {
-                botSession.stop();
-            }
+        } 
         }
     }
     public static void botStop() {
