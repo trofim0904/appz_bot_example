@@ -23,7 +23,7 @@ public abstract class Bot extends TelegramLongPollingBot {
         } catch (TelegramApiException e) {
             newBot.processTheException(e);
         } 
-        }
+        
     }
     public static void botStop() {
         botSession.stop();
