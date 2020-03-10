@@ -29,11 +29,17 @@ public final class HelloWorldBot extends Bot {
 
         String command = update.getMessage().getText();
 
+
+
+
         if (command.equals("/kill")){
             sendTextMessage(update.getMessage(), "Прощай, жестокий мир!");
             Bot.botStop();
         }
         if (command.equals("/start")){
+            if(!isActive){
+                Bot.botRestart();
+            }
             sendTextMessage(update.getMessage(), "Чего надобно, мешок с костями?");
         }
         else{
