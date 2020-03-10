@@ -22,8 +22,11 @@ public abstract class Bot extends TelegramLongPollingBot {
             botSession = new TelegramBotsApi().registerBot(newBot);
         } catch (TelegramApiException e) {
             newBot.processTheException(e);
-        } 
-        
+        } finally {
+            if (botSession != null) {
+                botSession.stop();
+            }
+        }
     }
     public static void botStop() {
         botSession.stop();
