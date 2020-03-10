@@ -30,13 +30,13 @@ public final class HelloWorldBot extends Bot {
         String command = update.getMessage().getText();
 
         if (command.equals("/kill")){
-            sendTextMessage("Прощай, жестокий мир!");
+            sendTextMessage(update.getMessage(), "Прощай, жестокий мир!");
         }
         if (command.equals("/start")){
-            sendTextMessage("Чего надобно, мешок с костями?");
+            sendTextMessage(update.getMessage(), "Чего надобно, мешок с костями?");
         }
         else{
-            sendTextMessage("Не знаю что вы мне пишете, но зовут вас Саня, Дима, Кирил");
+            sendTextMessage(update.getMessage(), "Не знаю что вы мне пишете, но зовут вас Саня, Дима, Кирил");
         }
     }
 }
