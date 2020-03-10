@@ -31,6 +31,7 @@ public final class HelloWorldBot extends Bot {
 
         if (command.equals("/kill")){
             sendTextMessage(update.getMessage(), "Прощай, жестокий мир!");
+            Bot.botStop();
         }
         if (command.equals("/start")){
             sendTextMessage(update.getMessage(), "Чего надобно, мешок с костями?");
